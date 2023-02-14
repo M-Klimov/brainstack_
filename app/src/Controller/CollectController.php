@@ -33,7 +33,7 @@ class CollectController extends BaseController
         $errors = $this->getEntityValidationErrors($validator, $bannerHitEntity);
 
         if ($errors) {
-            return $this->json(['errors' => $errors], Response::HTTP_OK);
+            return $this->json(['errors' => $errors], Response::HTTP_BAD_REQUEST);
         }
 
         $bannerHitEntity->computeIdentifier();
